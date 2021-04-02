@@ -1,10 +1,27 @@
-# youainti.github.io
+# Welcome to my homepage!
 
-This is my personal website. I'm checking how things work.
+Eventually this will have a lot more. 
+Someday.
 
-$$
-y = 12 \cdot k \frac{\int_a^b x dx}{\partial 12}
-$$
+For now, this is what you get. Here are a couple of topcis.
 
+## About Me
+I am a second year PhD student of Economics.
 
-test
+## Economics
+Topics from my first year in a PhD program can be found
+[here](./Econ_Cores/Econ_index.html).
+They are arranged by class.
+
+## Data
+Sometimes it helps to have a listing of useful information about data.
+[dataset](./data/index.html)
+
+## Technology
+Not filled out yet.
+
+## Recipes
+Someday I'll have an easy way to look up what I like to eat.
+
+## Opinions
+Do you really want to hear my opinions? Probably Not.

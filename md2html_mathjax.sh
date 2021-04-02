@@ -1,6 +1,7 @@
 #!/bin/bash
 
-for file in md/*.md
+#for file in md/*.md
+for file in $(find md -name "*.md")
 do
     echo "$file"
     ./pandoc_compile_mathjax.sh "$file"

@@ -1,0 +1,83 @@
+\documentclass{article}
+
+%%%%%%%%%Packages%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\include{Preable}
+
+
+%%%%%%%%%%%%CUSTOMIZATION%%%%%%%%%%%%%%%%%%%%%%
+\geometry{verbose,tmargin=0.8in,bmargin=0.8in,lmargin=1in,rmargin=1in}
+\setlength{\parskip}{0.1in}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+
+%This is the header
+\maketitle
+
+
+%This is the body
+
+
+\section{Logit Models}
+The idea is to capture the probability of a choice from a choice set.
+Must include those who didn't make a choice. %I need to look this up and get information about it.
+
+\subsection{With explanatory variables}
+\subsubsection{Multinomial Logit model}
+Suppose you have a choice set and explanatory variables that describe the 
+individual decision makers.
+
+Example: Car Shopping 
+\begin{itemize}
+ - Options: sedan, truck, suv
+ - Explanatory: Income, years of schooling, 
+\end{itemize}
+
+\subsubsection{Conditional Logit model}
+Suppose you have a choice set and explanatory variables that describe the 
+situation under which the choice was made.
+
+Example: Car Shopping
+\begin{itemize}
+ - Options: sedan, truck, suv
+ - Explanatory: Number of Seats, MPG, price at time of sale
+\end{itemize}
+
+
+\subsubsection{Mixed Logit model}
+Suppose you have a choice set and explanatory variables that describe both 
+decison makers and situation under which the choice was made.
+
+\subsection{Theoretical Development}
+
+### From Choice Models
+
+
+### McFadden's (1974) Derivation
+Let $B$ represent a choice set and let $S$ represent explanatory variables.
+Then for $ x \neq y, {x,y} \in B$ and $s \in S$.
+#### Axioms
+ - Independence of Irrelevant Alternatives: $\frac{Pr(x|s,B)}{Pr(y|s,B)} = \frac{Pr(x|s,\{x,y\})}{Pr(y|s,\{x,y\})}$
+ - Positivity: $\forall x\in B, Pr(x|s,B) > 0$
+ - Log Odds Utility: #describe better $v(x|s,y) = \log \frac{Pr(x|s,B)}{Pr(y|s,B)}$
+ - Additively Seperable Utility: $v(x|s,y) = v(x|s) - v(y|s)$
+
+#### Proof
+To copy from example
+
+## Interpretations
+
+### Shift effects
+
+### Marginal Effects
+Let $Q(x) = Pr(x|s)$
+$$
+\frac{\partial Q}{\partial x} = DO IT
+$$
+#### Elasticieties
+As $\epsilon_{Q,x} = \frac{\partial Q}{\partial x} \farc{x}{Q} = DO IT$
+
+\end{document}

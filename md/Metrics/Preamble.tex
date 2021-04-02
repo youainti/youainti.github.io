@@ -1,0 +1,75 @@
+
+%%%%%%%%%Packages%%%%%%%%%%%%%%%
+\usepackage{biblatex}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{thmtools, thm-restate}
+\usepackage{cleveref}
+
+
+
+
+%%%%%%%%%%%%SETUP THEOREMS%%%%%%%%%%%%%%%%%%%%%%
+\declaretheorem[within=subsection]{theorem}
+
+
+
+
+
+%%%%%%%%%%%%FORMATTING%%%%%%%%%%%%%%%%%%%%%
+%Math formatting
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\induction}[3]{
+        \textbf{#1}\\
+        \underline{Basis Step:}\\
+        #2
+
+        \underline{Induction Step:}\\
+        #3
+}
+\newcommand{\mle}[1]{\hat{#1}_{\text{MLE}}}
+\newcommand{\pr}[1]{\text{Pr}\left( #1 \right)}
+\newcommand{\thm}[3]{
+\begin{restatable}[#1]{theorem}{#2}
+\label{thm:#2}
+#3
+\end{restatable}
+}
+
+%These are some formatting/reminder commands
+\newcommand{\todo}[1]{
+\textbf{\#TODO: \underline{#1}}
+}
+\newcommand{\define}[1]{%for now just highlight, in future, link.
+	\underline{\textbf{#1}}
+}
+\newcommand{\mittle}[1]{\footnote{Mittlehammer pg. #1}}
+\newcommand{\likeli}[2]{\text{L}\left( #1 | #2 \right)}
+
+
+%%%%%%%%%%%%%%%Math Operators%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator*{\plim}{plim}
+
+%%%%%%%%%%%%%%INTERNAL REFERENCES%%%%%%%%%%%%%%
+%\newcommand{\eqref}[1]{Eq. \ref{#1}} %Already defined
+
+
+%%%%%%%%%%%%CITATIONS%%%%%%%%%%%%%%%%%
+%%%%% Adjust this at some point.
+%\bibliography{/home/will2/Desktop/Repos/homework_repos/Math461/References.bib}
+%This is how to perform citations.
+% Use \cite{ref} to get a numerical reference to the bibliography
+% Use \citetitle{ref} to get the title as a citation (Use for most cases)
+% Use \fullcite{ref} to insert the full reference.
+% NOTE: I am running pdflatex > biber > pdflates > pdflatex
+\newcommand{\numcite}[1]{\textsuperscript{\cite{#1}}}
+\newcommand{\nameref}[1]{\citetitle{#1}\numcite{#1}}
+
+
+\author{Will King}
+
+
+
