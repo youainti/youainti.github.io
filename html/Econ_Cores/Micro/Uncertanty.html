@@ -11,50 +11,57 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <script src="/node_modules/mathjax/es5/tex-chtml.js" type="text/javascript"></script>
+  <script src="/node_modules/katex/katex.jskatex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script>
+  <link rel="stylesheet" href="/node_modules/katex/katex.jskatex.min.css" />
 </head>
 <body>
 <h1 id="uncertanty-and-lotteries">Uncertanty and Lotteries</h1>
 <p>Prep for Cores 2020-05 <strong><em> </em></strong> # General Approach ## Assumputions <strong>Consequentialist premise:</strong> Consumers care only about the “reduced” simple lottery not the full compound lottery.</p>
 <p><strong>Continuity:</strong> The preference relation over lotteries is continuous.</p>
-<p>Given the preference relation <span class="math inline">\(R(a,b)\)</span> - <span class="math inline">\(a\)</span> preferred to <span class="math inline">\(b\)</span> - for the lotteries <span class="math inline">\(l,l&#39;,l&#39;&#39; \in L\)</span>, the following two sets are closed.</p>
-<p><span class="math inline">\(\big\{\alpha \ni [0,1]: R({}_{l}\alpha_{l&#39;},l&#39;&#39;)\big\}\)</span> and <span class="math inline">\(\big\{\alpha \ni [0,1]: R(l&#39;&#39;,{}_{l}\alpha_{l&#39;})\big\}\)</span></p>
+<p>Given the preference relation <span class="math inline">R(a,b)</span> - <span class="math inline">a</span> preferred to <span class="math inline">b</span> - for the lotteries <span class="math inline">l,l&#39;,l&#39;&#39; \in L</span>, the following two sets are closed.</p>
+<p><span class="math inline">\big\{\alpha \ni [0,1]: R({}_{l}\alpha_{l&#39;},l&#39;&#39;)\big\}</span> and <span class="math inline">\big\{\alpha \ni [0,1]: R(l&#39;&#39;,{}_{l}\alpha_{l&#39;})\big\}</span></p>
 <p>This eliminate the possibility of lexographic like preference relations.</p>
-<p><strong>Independence Axiom:</strong> <span class="math inline">\(\forall l,l&#39;,l&#39;&#39; \in L \wedge \alpha \in [0,1]\)</span>, we have <span class="math display">\[
+<p><strong>Independence Axiom:</strong> <span class="math inline">\forall l,l&#39;,l&#39;&#39; \in L \wedge \alpha \in [0,1]</span>, we have <span class="math display">
 R(l,l&#39;) \Leftrightarrow  R({}_{l}\alpha_{l&#39;&#39;},{}_{l&#39;}\alpha_{l&#39;&#39;})
-\]</span></p>
+</span></p>
 <hr />
 <h2 id="expected-utility-form">Expected Utility Form</h2>
-<p><strong>V.NM Expected Utility Function:</strong> Over the (finite) simple lottery <span class="math inline">\(l = [l_1, l_2 \dots l_n]^T\)</span>, there exists a set of coefficents <span class="math inline">\(u\)</span> such that if you treat them as vectors, the utility can be written as a dot product. <span class="math display">\[
+<p><strong>V.NM Expected Utility Function:</strong> Over the (finite) simple lottery <span class="math inline">l = [l_1, l_2 \dots l_n]^T</span>, there exists a set of coefficents <span class="math inline">u</span> such that if you treat them as vectors, the utility can be written as a dot product. <span class="math display">
 U(l) = u \cdot l
-\]</span> In other words, the utility is linear in the probabilities probabilities <span class="math inline">\(l_i \in l\)</span>.</p>
+</span> In other words, the utility is linear in the probabilities probabilities <span class="math inline">l_i \in l</span>.</p>
 <p>We often say that it is in v.NM form iff it is linear in probabilities.</p>
 <p><strong>Expected Utility Theorem</strong> If a rational preferernce relation over lotteries satisfies continuity and the independence axiom, then it must be representable in a v.NM form.</p>
 <hr />
 <h2 id="paradoxes">Paradoxes</h2>
 <p>These are differences between the way preferences should work with the continuity and IA assumptions, but how they differ in reality.</p>
 <h3 id="allais-paradox">Allais Paradox</h3>
-<p>Two sets of two lotteries over <span class="math inline">\([2.5e6, 5e5, 0e0]\)</span>,</p>
-<p>Make a choice in each set - First set is <span class="math inline">\(L_1 = [0,1,0]\)</span> and <span class="math inline">\(L_1&#39; = [0.1,0.89,0.01]\)</span> - Second set is <span class="math inline">\(L_2 = [0,0.11,0.89]\)</span> and <span class="math inline">\(L_2&#39; = [0.1,0,0.90]\)</span></p>
+<p>Two sets of two lotteries over <span class="math inline">[2.5e6, 5e5, 0e0]</span>,</p>
+<p>Make a choice in each set - First set is <span class="math inline">L_1 = [0,1,0]</span> and <span class="math inline">L_1&#39; = [0.1,0.89,0.01]</span> - Second set is <span class="math inline">L_2 = [0,0.11,0.89]</span> and <span class="math inline">L_2&#39; = [0.1,0,0.90]</span></p>
 <p>It can be shown that this violates I.A.</p>
 <hr />
 <hr />
 <h1 id="money-lotteries">Money Lotteries</h1>
-<p>We are treating <span class="math inline">\(x\)</span> as a monetary event.</p>
+<p>We are treating <span class="math inline">x</span> as a monetary event.</p>
 <h2 id="risk-adversion">Risk Adversion</h2>
-<p>Consider the lottery <span class="math inline">\(F\)</span> over outcomes <span class="math inline">\(x\)</span>: <span class="math display">\[
+<p>Consider the lottery <span class="math inline">F</span> over outcomes <span class="math inline">x</span>: <span class="math display">
 U(F) = \int u(x) F(x) dx
-\]</span></p>
-<p><strong>Bernoulli Utility function:</strong> is the term <span class="math inline">\(u(x)\)</span>, i.e. the utility from a given outcome <span class="math inline">\(x\)</span>.</p>
-<p><strong>Von Neumann-Morgenstern (v.NM) Utility Function:</strong> is the term <span class="math inline">\(U(F)\)</span>, i.e. the utility over the lottery. Note that it is linear in <span class="math inline">\(F\)</span>, the probability distribution, but this time has a “infinite” sum (integral).</p>
-<p><strong>Risk Adverse:</strong> IFF <span class="math inline">\(E(u(x)) \leq u(E(x))\)</span> for “all” probability distributions. In other words, Risk adverse if satisfies concave Jensen’s Inequality.</p>
-<p><strong>Certanty Equivalent:</strong> The certanty equivalent is <span class="math inline">\(c(F,u)\)</span> such that \[ u(c(F,u)) = E(u(x)) = u(x)f(x)dx \]</p>
-<p><strong>Probability Premium:</strong> The probability premium is <span class="math inline">\(\pi(x,\epsilon,u)\)</span> such that for certain outcome <span class="math inline">\(y\)</span> <span class="math display">\[
+</span></p>
+<p><strong>Bernoulli Utility function:</strong> is the term <span class="math inline">u(x)</span>, i.e. the utility from a given outcome <span class="math inline">x</span>.</p>
+<p><strong>Von Neumann-Morgenstern (v.NM) Utility Function:</strong> is the term <span class="math inline">U(F)</span>, i.e. the utility over the lottery. Note that it is linear in <span class="math inline">F</span>, the probability distribution, but this time has a “infinite” sum (integral).</p>
+<p><strong>Risk Adverse:</strong> IFF <span class="math inline">E(u(x)) \leq u(E(x))</span> for “all” probability distributions. In other words, Risk adverse if satisfies concave Jensen’s Inequality.</p>
+<p><strong>Certanty Equivalent:</strong> The certanty equivalent is <span class="math inline">c(F,u)</span> such that \[ u(c(F,u)) = E(u(x)) = u(x)f(x)dx \]</p>
+<p><strong>Probability Premium:</strong> The probability premium is <span class="math inline">\pi(x,\epsilon,u)</span> such that for certain outcome <span class="math inline">y</span> <span class="math display">
 u(y) = [ \frac{1}{2} + \pi ] u(x+\epsilon)
         + [ \frac{1}{2} - \pi ] u(x-\epsilon)
-\]</span></p>
-<p><strong>Absolute Risk Adversion</strong> <span class="math inline">\(r_A(x) = \frac{-u&#39;&#39;(x)}{u&#39;(x)}\)</span></p>
-<p><strong>Relative Risk Adversion</strong> <span class="math inline">\(r_R(x) = x \frac{-u&#39;&#39;(x)}{u&#39;(x)} = x \cdot r_A(x)\)</span></p>
+</span></p>
+<p><strong>Absolute Risk Adversion</strong> <span class="math inline">r_A(x) = \frac{-u&#39;&#39;(x)}{u&#39;(x)}</span></p>
+<p><strong>Relative Risk Adversion</strong> <span class="math inline">r_R(x) = x \frac{-u&#39;&#39;(x)}{u&#39;(x)} = x \cdot r_A(x)</span></p>
 <h3 id="risk-adverse-equivalent-conditions">Risk Adverse Equivalent Conditions</h3>
 <ul>
 <li>Concave utility function.</li>
