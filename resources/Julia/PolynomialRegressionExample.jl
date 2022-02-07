@@ -5,7 +5,7 @@ Consider the univariate Polynomial
 
 y = β₀ + β₁ ̇x+ β₂ x²
 
-this can be solved using least squares (the method used by Numpy's polyfit as follows)
+this can be solved using least squares (the method used by Numpy's polyfit) as follows
 =#
 
 using LinearAlgebra
